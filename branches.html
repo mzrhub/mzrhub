@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    
+    <!-- ========== 🚀 PREMIUM SEO META TAGS (BRANCHES PAGE) ========== -->
+    <title>MZR HUB · Our Companies & Ecosystem | eCommerce, Tech, Quran Academy, Zedemy</title>
+    <meta name="description" content="Discover the four innovative companies under MZR HUB: MZR Life Essentials (eCommerce), MZR Tech (digital services), Rehman Online Quran Academy, and Zedemy (academic institute). Each branch operates with excellence and integrity.">
+    <meta name="keywords" content="MZR HUB branches, MZR Life Essentials, MZR Tech, Rehman Online Quran Academy, Zedemy, parent company Pakistan, eCommerce mobile accessories, digital marketing agency, online Quran teaching, MBBS preparation courses">
+    <meta name="author" content="MZR HUB">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="5 days">
+    
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:title" content="MZR HUB · Our Companies — Multi-Sector Excellence">
+    <meta property="og:description" content="Explore MZR HUB's diversified portfolio: MZR Life Essentials (eCommerce), MZR Tech (digital), Rehman Online Quran Academy, and Zedemy (academics).">
+    <meta property="og:image" content="https://mzrhub.com/images/mzr-hub-branches-og.jpg"> <!-- Replace with actual -->
+    <meta property="og:url" content="https://mzrhub.com/branches">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MZR HUB">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MZR HUB · Our Companies Ecosystem">
+    <meta name="twitter:description" content="Four innovative ventures under one visionary parent company.">
+    <meta name="twitter:image" content="https://mzrhub.com/images/mzr-hub-branches-twitter.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://mzrhub.com/branches">
+    
+    <!-- Favicon (gold M) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23D4AF37'%3E%3Ccircle cx='50' cy='50' r='45' /%3E%3Ctext x='26' y='70' font-size='54' fill='black' font-family='Arial'%3EM%3C/text%3E%3C/svg%3E">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            color: #f0f0f0;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-top: 90px; /* offset for fixed header */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::selection {
+            background: #D4AF37;
+            color: #000;
+        }
+
+        h1, h2, h3, h4, .heading-font {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* gold subtle backgrounds */
+        .gold-network-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.03) 0%, transparent 25%),
+                radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.02) 0%, transparent 30%),
+                repeating-linear-gradient(45deg, rgba(212,175,55,0.01) 0px, rgba(212,175,55,0.01) 2px, transparent 2px, transparent 10px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #D4AF37, #D4AF37, #D4AF37, transparent);
+            width: 60%;
+            margin: 60px auto;
+            opacity: 0.3;
+        }
+
+        .btn-base {
+            display: inline-block;
+            padding: 14px 38px;
+            border-radius: 60px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        }
+
+        .btn-base:hover {
+            border-color: #D4AF37 !important;
+            background: transparent !important;
+            color: #D4AF37 !important;
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5);
+            transform: scale(1.02);
+        }
+
+        /* ===== FIXED HEADER (ALWAYS ON TOP) WITH LOGO UPLOAD ===== */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.96);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 8px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-img {
+            height: 55px;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+            transition: filter 0.3s ease;
+            border-radius: 8px;
+        }
+        .logo-img:hover {
+            filter: drop-shadow(0 0 20px #D4AF37);
+        }
+        .logo-tagline {
+            color: #777;
+            font-size: 0.8rem;
+            border-left: 1px solid #D4AF37;
+            padding-left: 12px;
+            margin-left: 5px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        @media (max-width: 600px) {
+            .logo-tagline { display: none; }
+            .logo-img { height: 45px; }
+            body { padding-top: 80px; }
+        }
+
+        /* desktop menu */
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .nav-menu a {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-weight: 400;
+            padding: 8px 10px;
+            position: relative;
+            transition: color 0.2s;
+            font-size: 1rem;
+        }
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 80%;
+            height: 2px;
+            background: #D4AF37;
+            transition: transform 0.25s ease-out;
+            transform-origin: center;
+        }
+        .nav-menu a:hover { color: #D4AF37; }
+        .nav-menu a:hover::before { transform: translateX(-50%) scaleX(1); }
+        .nav-menu a.active { color: #D4AF37; font-weight: 500; }
+        .nav-menu a.active::before { transform: translateX(-50%) scaleX(1); }
+
+        .contact-link {
+            background: transparent;
+            border: 1px solid #D4AF37;
+            border-radius: 50px;
+            padding: 8px 22px !important;
+            margin-left: 10px;
+            transition: all 0.2s !important;
+        }
+        .contact-link:hover {
+            background: #D4AF37;
+            color: #000 !important;
+            box-shadow: 0 0 30px #D4AF37;
+        }
+        .contact-link::before { display: none !important; }
+
+        /* hamburger (mobile) */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            padding: 5px;
+            z-index: 2000;
+        }
+        .hamburger span {
+            width: 28px;
+            height: 2px;
+            background: #D4AF37;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* responsive nav */
+        @media (max-width: 800px) {
+            .hamburger { display: flex; }
+            .nav-menu {
+                position: fixed;
+                top: 75px;
+                left: -100%;
+                width: 75%;
+                max-width: 350px;
+                height: 100vh;
+                background: rgba(0,0,0,0.98);
+                backdrop-filter: blur(16px);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 40px 30px;
+                transition: left 0.35s ease-in-out;
+                border-right: 1px solid #D4AF37;
+                box-shadow: 10px 0 40px rgba(0,0,0,0.8);
+                z-index: 999;
+                gap: 25px;
+            }
+            .nav-menu.active { left: 0; }
+            .nav-menu a {
+                font-size: 1.3rem;
+                width: 100%;
+                border-bottom: 1px solid #222;
+                padding-bottom: 12px;
+            }
+            .contact-link {
+                margin-left: 0;
+                text-align: center;
+                border: 1px solid #D4AF37;
+            }
+            .header-container { padding: 8px 20px; }
+        }
+        @media (max-width: 480px) {
+            body { padding-top: 70px; }
+            .logo-img { height: 40px; }
+        }
+
+        /* branch section layout */
+        .branch-section {
+            padding: 100px 0;
+            position: relative;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        /* ===== LOGO IMAGE SPACE FOR EACH COMPANY ===== */
+        .company-logo-container {
+            width: 100%;
+            height: 260px;
+            border-radius: 30px;
+            background: #0c0c0c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #2a2a2a;
+            transition: 0.4s;
+            box-shadow: 0 15px 35px -20px #000;
+            padding: 20px;
+        }
+        .company-logo-container img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+            filter: drop-shadow(0 0 15px rgba(212,175,55,0.3));
+            transition: all 0.3s;
+        }
+        .company-logo-container:hover {
+            border-color: #D4AF37;
+            box-shadow: 0 0 40px rgba(212,175,55,0.2);
+        }
+        .company-logo-container:hover img {
+            filter: drop-shadow(0 0 25px #D4AF37);
+            transform: scale(1.02);
+        }
+        /* fallback icon (if no logo) - will be hidden if image loads */
+        .company-logo-container i {
+            font-size: 5rem;
+            opacity: 0.4;
+            transition: 0.3s;
+            display: none; /* we use image by default; this is fallback but we use image */
+        }
+        .branch-section:hover .company-logo-container {
+            border-color: #D4AF37;
+        }
+
+        .accent-tagline {
+            font-size: 1.3rem;
+            font-weight: 300;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .desc-list {
+            margin: 25px 0;
+            list-style: none;
+        }
+        .desc-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .desc-list li i {
+            color: #D4AF37;
+            font-size: 1rem;
+        }
+
+        /* ecosystem grid */
+        .ecosystem-grid {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .eco-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: #0a0a0a;
+            padding: 25px;
+            border-radius: 30px;
+            border: 1px solid #222;
+            transition: 0.3s;
+        }
+        .eco-item:hover {
+            border-color: #D4AF37;
+            box-shadow: 0 0 30px rgba(212,175,55,0.1);
+        }
+        .eco-icon {
+            font-size: 2.5rem;
+            color: #D4AF37;
+        }
+
+        /* responsive */
+        @media (max-width: 900px) {
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+            .ecosystem-grid {
+                grid-template-columns: 1fr;
+            }
+            .container { padding: 0 20px; }
+            .branch-section { padding: 60px 0; }
+        }
+
+        /* fade in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.9s cubic-bezier(0.2,0.9,0.1,1), transform 0.9s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* CTA final */
+        .cta-section {
+            padding: 110px 0;
+            background: linear-gradient(145deg, #000000, #0e0e0e);
+            text-align: center;
+            position: relative;
+        }
+
+        .btn-large-gold {
+            background: #D4AF37;
+            border: none;
+            color: #000;
+            font-weight: 600;
+            padding: 18px 58px;
+            border-radius: 60px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+            border: 1px solid #D4AF37;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 30px;
+        }
+
+        .btn-large-gold:hover {
+            background: transparent;
+            color: #D4AF37;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.6);
+            transform: scale(1.02);
+        }
+
+        footer {
+            border-top: 1px solid #222;
+            padding: 40px 0;
+            text-align: center;
+            color: #555;
+        }
+
+        .gold-text {
+            color: #D4AF37;
+        }
+
+        /* underline utility */
+        .gold-underline {
+            width: 120px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation (FIXED ALWAYS ON TOP) with parent company logo -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link" aria-label="MZR HUB home">
+                    <!-- REPLACE WITH YOUR ACTUAL PARENT COMPANY LOGO -->
+                    <img src="hub.jpeg" 
+                         alt="MZR HUB - Parent Company" 
+                         class="logo-img"
+                         title="MZR HUB">
+                </a>
+                <span class="logo-tagline">MZR HUB</span>
+            </div>
+            <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="branches.html" aria-current="page">Branches</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="contact.html" class="contact-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section style="padding: 120px 0 60px; position: relative; text-align: center;">
+        <div class="gold-network-bg"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <h1 class="fade-in" style="font-size: 5.5rem; font-weight: 700; background: linear-gradient(145deg, #f9e7b3, #D4AF37, #b48c2c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Our Companies</h1>
+            <p class="fade-in" style="font-size: 2rem; font-family: 'Cinzel'; color: #d4c59e; margin-top: 0;">A Diversified Ecosystem of Innovation & Excellence</p>
+            <div style="width: 150px; height: 2px; background: linear-gradient(90deg, transparent, #D4AF37, transparent); margin: 25px auto;"></div>
+            <p class="fade-in" style="max-width: 850px; margin: 30px auto 0; font-size: 1.2rem; color: #ccc;">Under the leadership of MZR HUB, each branch operates with independent focus while sharing a unified vision of growth, integrity, and excellence.</p>
+        </div>
+    </section>
+
+    <!-- Branch 1: MZR Life Essentials (blue & green) -->
+    <section class="branch-section" style="background: #000;">
+        <div class="gold-network-bg" style="opacity: 0.2;"></div>
+        <div class="container">
+            <div class="two-col">
+                <div class="fade-in">
+                    <div style="width: 80px; height: 4px; background: linear-gradient(90deg, #2196F3, #8BC34A); margin-bottom: 25px;"></div>
+                    <h2 style="font-size: 3.2rem; color: white;">MZR Life Essentials</h2>
+                    <div class="accent-tagline" style="color: #8BC34A;">Premium Everyday Solutions.</div>
+                    <p style="margin: 20px 0; color: #ccc;">MZR Life Essentials is a fast-growing eCommerce brand dedicated to delivering high-quality products at affordable prices. We focus on reliability, customization, and customer satisfaction.</p>
+                    <ul class="desc-list">
+                        <li><i class="fas fa-heartbeat gold-text"></i> Health products (BP apparatus, wellness tools)</li>
+                        <li><i class="fas fa-mobile-alt gold-text"></i> Mobile accessories (covers, chargers, gadgets)</li>
+                        <li><i class="fas fa-spa gold-text"></i> Beauty products</li>
+                        <li><i class="fas fa-home gold-text"></i> Daily household essentials</li>
+                        <li><i class="fas fa-paint-brush gold-text"></i> Customized items (personalized covers & products)</li>
+                    </ul>
+                    <p style="color: #ddd; margin-bottom: 30px;">We prioritize quality control, customer trust, and smooth purchasing experience.</p>
+                    <a href="https://wa.me/c/179495927578830" target="_blank" rel="noopener" class="btn-base" style="background: linear-gradient(145deg, #1e88e5, #2e7d32); color: white; font-weight: 500; box-shadow: 0 10px 25px -5px #1e88e5;">View WhatsApp Catalogue →</a>
+                </div>
+                <div class="fade-in">
+                    <!-- ===== MZR LIFE ESSENTIALS LOGO UPLOAD SPOT ===== -->
+                    <div class="company-logo-container">
+                        <!-- REPLACE src WITH YOUR COMPANY LOGO (MZR Life Essentials) -->
+                        <img src="mzr life essentials.png" 
+                       alt="MZR Life Essentials - eCommerce brand"
+                         title="MZR Life Essentials"
+                        width="200"> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Branch 2: MZR Tech (digital blue) -->
+    <section class="branch-section" style="background: #000;">
+        <div class="gold-network-bg" style="opacity: 0.2;"></div>
+        <div class="container">
+            <div class="two-col">
+                <div class="fade-in order-2" style="order:2;">
+                    <div style="width: 80px; height: 4px; background: #00b0ff; margin-bottom: 25px;"></div>
+                    <h2 style="font-size: 3.2rem; color: white;">MZR Tech</h2>
+                    <div class="accent-tagline" style="color: #00b0ff;">Powering Digital Growth.</div>
+                    <p style="margin: 20px 0; color: #ccc;">MZR Tech is a modern digital service provider helping individuals and businesses build a powerful online presence.</p>
+                    <ul class="desc-list">
+                        <li><i class="fas fa-code gold-text"></i> Website Development (WordPress & Custom)</li>
+                        <li><i class="fas fa-chart-line gold-text"></i> Digital Marketing (Facebook & Instagram Ads)</li>
+                        <li><i class="fas fa-paint-brush gold-text"></i> Branding & Graphic Design</li>
+                        <li><i class="fas fa-briefcase gold-text"></i> Business Setup Consultation</li>
+                        <li><i class="fas fa-laptop gold-text"></i> Computer Courses (Basic to Advanced)</li>
+                    </ul>
+                    <p style="color: #ddd; margin-bottom: 30px;">We combine strategy, creativity, and technology to deliver impactful digital solutions.</p>
+                    <a href="https://wa.me/c/179495927578830" target="_blank" rel="noopener" class="btn-base" style="background: #0d47a1; color: white;">Connect on WhatsApp →</a>
+                </div>
+                <div class="fade-in order-1">
+                    <!-- ===== MZR TECH LOGO UPLOAD SPOT ===== -->
+                    <div class="company-logo-container">
+                        <!-- REPLACE src WITH YOUR MZR TECH LOGO -->
+                        <img src="mzr tech.png" 
+                       alt="MZR Tech - Digital Services"
+                         title="MZR Tech"
+                        width="200">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Branch 3: Rehman Online Quran Academy (emerald) -->
+    <section class="branch-section" style="background: #000;">
+        <div class="gold-network-bg"></div>
+        <div class="container">
+            <div class="two-col">
+                <div class="fade-in">
+                    <div style="width: 80px; height: 4px; background: #2e7d32; margin-bottom: 25px;"></div>
+                    <h2 style="font-size: 3rem; color: white;">Rehman Online Quran Academy</h2>
+                    <div class="accent-tagline" style="color: #66bb6a;">Connecting Hearts with the Quran.</div>
+                    <p style="margin: 20px 0; color: #ccc;">Rehman Online Quran Academy is a dedicated Islamic educational institution committed to providing authentic Quranic learning worldwide.</p>
+                    <ul class="desc-list">
+                        <li><i class="fas fa-book-open gold-text"></i> Nazra Quran</li>
+                        <li><i class="fas fa-language gold-text"></i> Translation (Tarjuma)</li>
+                        <li><i class="fas fa-dove gold-text"></i> Tafseer</li>
+                        <li><i class="fas fa-microphone-alt gold-text"></i> Recitation with Tajweed</li>
+                        <li><i class="fas fa-mosque gold-text"></i> Hifz Program</li>
+                    </ul>
+                    <p style="color: #ddd;">Qualified male and female teachers provide personalized online sessions in a flexible learning environment.</p>
+                    <a href="https://mzrhub.github.io/Rehman-Online-Quran-Academy/" target="_blank" rel="noopener" class="btn-base" style="background: #1b5e20; color: white; margin-top: 30px;">Visit Academy Website →</a>
+                </div>
+                <div class="fade-in">
+                    <!-- ===== REHMAN ONLINE QURAN ACADEMY LOGO UPLOAD SPOT ===== -->
+                    <div class="company-logo-container">
+                        <!-- REPLACE src WITH YOUR REHMAN ACADEMY LOGO -->
+                        <img src="roqa.png" 
+                       alt="learn quran online"
+                         title="Rehman Online Quran Academy"
+                        width="200">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Branch 4: Zedemy (academic purple) -->
+    <section class="branch-section" style="background: #000;">
+        <div class="gold-network-bg"></div>
+        <div class="container">
+            <div class="two-col">
+                <div class="fade-in order-2">
+                    <div style="width: 80px; height: 4px; background: #9c27b0; margin-bottom: 25px;"></div>
+                    <h2 style="font-size: 3.2rem; color: white;">Zedemy</h2>
+                    <div class="accent-tagline" style="color: #ce93d8;">Structured Learning. Strong Foundations.</div>
+                    <p style="margin: 20px 0; color: #ccc;">Zedemy is a modern online academic institute designed to provide high-quality educational support across multiple levels.</p>
+                    <ul class="desc-list">
+                        <li><i class="fas fa-school gold-text"></i> School subject classes</li>
+                        <li><i class="fas fa-university gold-text"></i> College subject preparation</li>
+                        <li><i class="fas fa-stethoscope gold-text"></i> Special classes for medical students</li>
+                        <li><i class="fas fa-user-nurse gold-text"></i> Nursing preparation</li>
+                        <li><i class="fas fa-heartbeat gold-text"></i> MBBS preparation</li>
+                    </ul>
+                    <p style="color: #ddd;">Our structured teaching methodology focuses on concept clarity, exam strategy, and student confidence.</p>
+                    <a href="https://wa.me/923249375759" target="_blank" rel="noopener" class="btn-base" style="background: #6a1b9a; color: white;">Contact Zedemy →</a>
+                </div>
+                <div class="fade-in order-1">
+                    <!-- ===== ZEDEMY LOGO UPLOAD SPOT ===== -->
+                    <div class="company-logo-container">
+                        <!-- REPLACE src WITH YOUR ZEDEMY LOGO -->
+                        <img src="slazzer-preview-q6f5m.png" 
+                       alt="Zedemy - Online Academic Institute"
+                        title="Zedemy - Online Academic Institute"
+                        width="200"> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Ecosystem comparison -->
+    <section style="padding: 80px 0;">
+        <div class="container">
+            <h2 class="heading-font fade-in" style="font-size: 3.2rem; text-align: center;">One Vision. Multiple Industries.</h2>
+            <div class="gold-underline"></div>
+            <p class="fade-in" style="text-align: center; max-width: 900px; margin: 20px auto 40px; color: #ccc; font-size: 1.2rem;">MZR HUB operates as a unified business ecosystem. Each branch maintains operational independence while benefiting from centralized leadership, brand strength, and strategic growth planning.</p>
+            
+            <div class="ecosystem-grid">
+                <div class="eco-item fade-in"><div class="eco-icon"><i class="fas fa-check-circle"></i></div><div><h4>Consistency</h4><p style="color:#aaa;">Shared standards across all branches</p></div></div>
+                <div class="eco-item fade-in"><div class="eco-icon"><i class="fas fa-briefcase"></i></div><div><h4>Professionalism</h4><p style="color:#aaa;">Centralized leadership & expertise</p></div></div>
+                <div class="eco-item fade-in"><div class="eco-icon"><i class="fas fa-chart-bar"></i></div><div><h4>Sustainable Growth</h4><p style="color:#aaa;">Long-term strategic planning</p></div></div>
+                <div class="eco-item fade-in"><div class="eco-icon"><i class="fas fa-eye"></i></div><div><h4>Long-Term Vision</h4><p style="color:#aaa;">Unified mission for future impact</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-section">
+        <div class="gold-network-bg" style="opacity: 0.2;"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <h2 class="fade-in" style="font-size: 3.5rem; color: #fff; text-shadow: 0 0 20px #D4AF37;">Interested in Our Services?</h2>
+            <p class="fade-in" style="font-size: 1.5rem; color: #e0cba0; margin: 20px 0;">Explore our companies and connect with the branch that meets your needs.</p>
+            <p class="fade-in" style="font-size: 2rem;"><i class="fas fa-phone-alt gold-text"></i> +923249375759</p>
+            <p class="fade-in" style="font-size: 2rem; margin-bottom: 30px;"><i class="fas fa-envelope gold-text"></i> mzrhuboffical@gmail.com</p>
+            <a href="contact.html" class="btn-large-gold fade-in">Contact MZR HUB</a>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <p>© 2025 MZR HUB – parent company. All rights reserved. · branches ecosystem</p>
+        <p style="margin-top: 8px; color: #3a3a3a;">✦  vision · integrity · growth  ✦</p>
+    </footer>
+
+    <!-- scroll animation observer + mobile menu -->
+    <script>
+        // fade-in observer
+        const faders = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2, rootMargin: '0px 0px -40px 0px' });
+        faders.forEach(f => observer.observe(f));
+
+        // mobile menu
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        }
+        // close on link click
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 800) {
+                    hamburger?.classList.remove('active');
+                    navMenu?.classList.remove('active');
+                }
+            });
+        });
+        // set active page
+        const currentPath = location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === currentPath) {
+                link.setAttribute('aria-current', 'page');
+            } else {
+                link.removeAttribute('aria-current');
+            }
+        });
+    </script>
+</body>
+</html>

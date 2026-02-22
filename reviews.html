@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MZR HUB · client reviews | trust & credibility</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            color: #f0f0f0;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::selection {
+            background: #D4AF37;
+            color: #000;
+        }
+
+        h1, h2, h3, h4, .heading-font {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* subtle golden sparkle background for hero */
+        .gold-sparkle-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 15% 30%, rgba(212, 175, 55, 0.04) 0%, transparent 18%),
+                radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 25%),
+                radial-gradient(circle at 40% 80%, rgba(212, 175, 55, 0.02) 0%, transparent 22%),
+                repeating-linear-gradient(45deg, rgba(212,175,55,0.01) 0px, rgba(212,175,55,0.01) 2px, transparent 2px, transparent 12px);
+            pointer-events: none;
+            z-index: 0;
+            animation: softTwinkle 14s infinite alternate;
+        }
+
+        @keyframes softTwinkle {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.7; }
+        }
+
+        .gold-underline {
+            width: 150px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #D4AF37, #D4AF37, #D4AF37, transparent);
+            margin: 25px auto;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #D4AF37, #D4AF37, #D4AF37, transparent);
+            width: 60%;
+            margin: 60px auto;
+            opacity: 0.3;
+        }
+          /* ===== FIXED HEADER (ALWAYS ON TOP) WITH LOGO UPLOAD ===== */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.96);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 8px 40px; /* slightly reduced to accommodate bigger logo */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* ===== LOGO CONTAINER: REPLACE SRC WITH YOUR ACTUAL LOGO PATH ===== */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-img {
+            height: 55px;          /* fixed height, adjusts width automatically */
+            width: auto;
+            max-width: 180px;       /* prevent too wide */
+            object-fit: contain;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+            transition: filter 0.3s ease;
+            border-radius: 8px;      /* optional if your logo has sharp corners */
+        }
+        .logo-img:hover {
+            filter: drop-shadow(0 0 20px #D4AF37);
+        }
+        /* fallback text if image not loaded (rare) */
+        .logo-text-fallback {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #D4AF37;
+            letter-spacing: 2px;
+            display: none; /* hidden by default, only show if image missing? we keep as backup but image will show */
+        }
+        /* optional small tagline near logo (hidden on mobile) */
+        .logo-tagline {
+            color: #777;
+            font-size: 0.8rem;
+            border-left: 1px solid #D4AF37;
+            padding-left: 12px;
+            margin-left: 5px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        @media (max-width: 600px) {
+            .logo-tagline { display: none; }
+            .logo-img { height: 45px; }
+            body { padding-top: 80px; }
+        }
+
+        /* desktop menu */
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .nav-menu a {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-weight: 400;
+            padding: 8px 10px;
+            position: relative;
+            transition: color 0.2s;
+            font-size: 1rem;
+        }
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 80%;
+            height: 2px;
+            background: #D4AF37;
+            transition: transform 0.25s ease-out;
+            transform-origin: center;
+        }
+        .nav-menu a:hover { color: #D4AF37; }
+        .nav-menu a:hover::before { transform: translateX(-50%) scaleX(1); }
+        .nav-menu a.active { color: #D4AF37; font-weight: 500; }
+        .nav-menu a.active::before { transform: translateX(-50%) scaleX(1); }
+
+        .contact-link {
+            background: transparent;
+            border: 1px solid #D4AF37;
+            border-radius: 50px;
+            padding: 8px 22px !important;
+            margin-left: 10px;
+            transition: all 0.2s !important;
+        }
+        .contact-link:hover {
+            background: #D4AF37;
+            color: #000 !important;
+            box-shadow: 0 0 30px #D4AF37;
+        }
+        .contact-link::before { display: none !important; }
+
+        /* hamburger (mobile) */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            padding: 5px;
+            z-index: 2000;
+        }
+        .hamburger span {
+            width: 28px;
+            height: 2px;
+            background: #D4AF37;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* responsive */
+        @media (max-width: 800px) {
+            .hamburger { display: flex; }
+            .nav-menu {
+                position: fixed;
+                top: 75px;
+                left: -100%;
+                width: 75%;
+                max-width: 350px;
+                height: 100vh;
+                background: rgba(0,0,0,0.98);
+                backdrop-filter: blur(16px);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 40px 30px;
+                transition: left 0.35s ease-in-out;
+                border-right: 1px solid #D4AF37;
+                box-shadow: 10px 0 40px rgba(0,0,0,0.8);
+                z-index: 999;
+                gap: 25px;
+            }
+            .nav-menu.active { left: 0; }
+            .nav-menu a {
+                font-size: 1.3rem;
+                width: 100%;
+                border-bottom: 1px solid #222;
+                padding-bottom: 12px;
+            }
+            .contact-link {
+                margin-left: 0;
+                text-align: center;
+                border: 1px solid #D4AF37;
+            }
+            .header-container { padding: 8px 20px; }
+        }
+        @media (max-width: 480px) {
+            body { padding-top: 70px; }
+            .logo-img { height: 40px; }
+        }
+        /* card style */
+        .testimonial-card {
+            background: rgba(12, 12, 12, 0.8);
+            backdrop-filter: blur(2px);
+            border: 1px solid #2a2a2a;
+            border-radius: 30px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 35px -15px #000;
+            height: 100%;
+        }
+
+        .testimonial-card:hover {
+            border-color: #D4AF37;
+            transform: translateY(-6px);
+            box-shadow: 0 25px 45px -15px rgba(212, 175, 55, 0.3);
+        }
+
+        .gold-stars {
+            color: #D4AF37;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+        }
+
+        .client-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #D4AF37;
+            margin-bottom: 5px;
+        }
+
+        .service-cat {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        /* featured slider (single card large) */
+        .featured-slider-card {
+            background: #0b0b0b;
+            border: 1px solid #D4AF37;
+            border-radius: 50px;
+            padding: 50px 60px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: 0 0 60px rgba(212,175,55,0.2);
+            transition: 0.3s;
+        }
+        .featured-slider-card:hover {
+            box-shadow: 0 0 90px rgba(212,175,55,0.3);
+        }
+
+        /* trust badges grid */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin: 50px 0;
+        }
+        .trust-item {
+            background: #0a0a0a;
+            border: 1px solid #222;
+            border-radius: 40px;
+            padding: 30px 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .trust-item:hover {
+            border-color: #D4AF37;
+            box-shadow: 0 0 35px rgba(212,175,55,0.1);
+        }
+        .trust-icon {
+            font-size: 2.8rem;
+            color: #D4AF37;
+            margin-bottom: 15px;
+        }
+
+        /* statistics counter */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+            background: #0c0c0c;
+            border-radius: 40px;
+            border: 1px solid #333;
+        }
+        .stat-number {
+            font-size: 3.2rem;
+            font-family: 'Cinzel';
+            color: #D4AF37;
+            font-weight: 700;
+        }
+
+        /* form */
+        .review-form {
+            max-width: 700px;
+            margin: 40px auto 0;
+            background: #0b0b0b;
+            padding: 50px;
+            border-radius: 50px;
+            border: 1px solid #333;
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 18px 22px;
+            background: #000;
+            border: 1px solid #3a3a3a;
+            border-radius: 60px;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: #D4AF37;
+            outline: none;
+            box-shadow: 0 0 20px rgba(212,175,55,0.2);
+        }
+        textarea {
+            border-radius: 30px;
+            resize: vertical;
+        }
+        .star-rating-select {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            font-size: 2rem;
+            color: #D4AF37;
+            cursor: pointer;
+        }
+        .star-rating-select i:hover,
+        .star-rating-select i.active {
+            color: #f5c542;
+            text-shadow: 0 0 15px #D4AF37;
+        }
+        .btn-gold {
+            background: #D4AF37;
+            border: none;
+            color: #000;
+            font-weight: 600;
+            padding: 16px 42px;
+            border-radius: 60px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid #D4AF37;
+            width: 100%;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+        }
+        .btn-gold:hover {
+            background: transparent;
+            color: #D4AF37;
+            box-shadow: 0 5px 30px rgba(212, 175, 55, 0.5);
+        }
+
+        /* cta final */
+        .cta-final {
+            padding: 100px 0;
+            background: linear-gradient(145deg, #000, #0d0d0d);
+            text-align: center;
+            border-top: 1px solid #D4AF37;
+            border-bottom: 1px solid #D4AF37;
+        }
+
+        /* fade-in */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.8s cubic-bezier(0.2,0.9,0.1,1), transform 0.8s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* responsive */
+        @media (max-width: 1000px) {
+            .trust-grid, .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 700px) {
+            .trust-grid, .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .featured-slider-card {
+                padding: 30px 20px;
+            }
+            .container { padding: 0 20px; }
+        }
+
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            color: #555;
+            border-top: 1px solid #222;
+        }
+    </style>
+</head>
+<body>
+<!-- Navigation (FIXED ALWAYS ON TOP) with ACTUAL LOGO UPLOAD SPOT -->
+    <header>
+        <div class="header-container">
+            <!-- Logo container: REPLACE 'logo.png' WITH YOUR LOGO FILE PATH -->
+            <div class="logo">
+                <a href="index.html" class="logo-link" aria-label="MZR HUB home">
+                    <!-- 
+                        ========== INSTRUCTIONS ==========
+                        Replace the src="logo-placeholder.svg" with your actual logo file.
+                        Supported formats: PNG, JPG, SVG, WEBP.
+                        Example: <img src="images/mzr-logo.png" alt="MZR HUB">
+                        The logo will automatically size to 55px height, keep it high-res.
+                    -->
+                    <img src="hub.jpeg"
+                         alt="MZR HUB - Parent Company" 
+                         class="logo-img"
+                         title="MZR HUB">
+                </a>
+                <!-- Optional subtle tagline (visible on desktop) -->
+                <span class="logo-tagline">MZR HUB</span>
+            </div>
+            <!-- Hamburger (mobile) -->
+            <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!-- Navigation links (SEO friendly) -->
+            <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+                <a href="index.html" aria-current="page">Home</a>
+                <a href="about.html">About</a>
+                <a href="branches.html">Branches</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="contact.html" class="contact-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- Hero -->
+    <section style="padding: 140px 0 80px; position: relative; text-align: center;">
+        <div class="gold-sparkle-bg"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <h1 class="fade-in" style="font-size: 5.5rem; font-weight: 700; background: linear-gradient(145deg, #f9e7b3, #D4AF37, #b48c2c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">What Our Clients Say</h1>
+            <p class="fade-in" style="font-size: 2rem; font-family: 'Cinzel'; color: #d4c59e;">Real experiences from people who trusted MZR HUB.</p>
+            <div class="gold-underline"></div>
+            <p class="fade-in" style="max-width: 900px; margin: 30px auto 0; font-size: 1.2rem; color: #ccc;">Across eCommerce, digital services, Islamic education, and academic learning, our clients consistently appreciate our quality, professionalism, and dedication.</p>
+        </div>
+    </section>
+
+    <!-- Featured testimonial (large card slider style) -->
+    <section style="padding: 30px 0 60px;">
+        <div class="container">
+            <div class="featured-slider-card fade-in">
+                <div class="gold-stars">★★★★★</div>
+                <p style="font-size: 1.5rem; font-style: italic; color: #ddd; margin: 25px 0;">“I ordered a mobile cover and the quality exceeded my expectations. Excellent finishing, fast delivery, and very professional service. Highly recommended!”</p>
+                <div class="client-name" style="font-size: 1.8rem;">Sikander Ali</div>
+                <div class="service-cat">(Product – Mobile Cover, MZR Life Essentials)</div>
+            </div>
+            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 30px;">
+                <span style="width: 12px; height: 12px; background: #D4AF37; border-radius: 50%; box-shadow: 0 0 15px gold;"></span>
+                <span style="width: 10px; height: 10px; background: #444; border-radius: 50%;"></span>
+                <span style="width: 10px; height: 10px; background: #444; border-radius: 50%;"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- two more featured reviews inline (optional) -->
+    <section style="padding: 20px 0;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                <div class="testimonial-card fade-in">
+                    <div class="gold-stars">★★★★★</div>
+                    <p style="font-size: 1.2rem;">“Premium quality BP apparatus with accurate readings. Very cooperative team and smooth buying experience.”</p>
+                    <div class="client-name">Ali Raza</div>
+                    <div class="service-cat">(Product – BP Apparatus, MZR Life Essentials)</div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="gold-stars">★★★★★</div>
+                    <p style="font-size: 1.2rem;">“The customization was perfect. Amazing print quality and finishing. I am fully satisfied.”</p>
+                    <div class="client-name">Sameer Khalid</div>
+                    <div class="service-cat">(Product – Custom Mobile Cover)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Education & digital reviews grid (3 per row) -->
+    <section style="padding: 60px 0;">
+        <div class="container">
+            <h2 class="heading-font fade-in" style="font-size: 3rem; text-align: center;">Education & Digital Services</h2>
+            <div class="gold-underline" style="margin-bottom: 50px;"></div>
+
+            <div style="display: grid; grid-template-columns: repeat(3,1fr); gap: 25px;">
+                <!-- card 1 -->
+                <div class="testimonial-card fade-in">
+                    <div class="gold-stars">★★★★★</div>
+                    <p>“The teachers are very humble and explain everything clearly. My Quran reading has improved a lot.”</p>
+                    <div class="client-name">Aqeel</div>
+                    <div class="service-cat">(Online Quran Classes)</div>
+                </div>
+                <!-- card 2 -->
+                <div class="testimonial-card fade-in">
+                    <div class="gold-stars">★★★★★</div>
+                    <p>“I took digital marketing services for ads. Very professional strategy and great results. Highly satisfied.”</p>
+                    <div class="client-name">Mahnoor</div>
+                    <div class="service-cat">(Digital Marketing Ads, MZR Tech)</div>
+                </div>
+                <!-- card 3 -->
+                <div class="testimonial-card fade-in">
+                    <div class="gold-stars">★★★★★</div>
+                    <p>“The computer course was explained in a very easy and practical way. Excellent teaching method.”</p>
+                    <div class="client-name">Nayyab</div>
+                    <div class="service-cat">(Online Computer Course, MZR Tech)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section style="padding: 70px 0; background: #030303;">
+        <div class="container">
+            <h2 class="heading-font fade-in" style="font-size: 3rem; text-align: center;">Why Clients Trust MZR HUB</h2>
+            <div class="gold-underline"></div>
+            <div class="trust-grid">
+                <div class="trust-item fade-in"><div class="trust-icon"><i class="fas fa-user-check"></i></div><h3>Verified Customers</h3><p style="color:#aaa;">Authentic reviews</p></div>
+                <div class="trust-item fade-in"><div class="trust-icon"><i class="fas fa-medal"></i></div><h3>Quality Assurance</h3><p style="color:#aaa;">Excellence assured</p></div>
+                <div class="trust-item fade-in"><div class="trust-icon"><i class="fas fa-headset"></i></div><h3>Professional Support</h3><p style="color:#aaa;">24/7 assistance</p></div>
+                <div class="trust-item fade-in"><div class="trust-icon"><i class="fas fa-layer-group"></i></div><h3>Multi-Sector Expertise</h3><p style="color:#aaa;">4 industries</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics (animated numbers via simple JS later) -->
+    <section style="padding: 70px 0;">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-in"><div class="stat-number" data-target="100">100+</div><p style="color:#ccc;">Happy Customers</p></div>
+                <div class="stat-item fade-in"><div class="stat-number" data-target="4">4</div><p style="color:#ccc;">Business Divisions</p></div>
+                <div class="stat-item fade-in"><div class="stat-number" data-target="95">95%</div><p style="color:#ccc;">Customer Satisfaction</p></div>
+                <div class="stat-item fade-in"><div class="stat-number" data-target="500">500+</div><p style="color:#ccc;">Growing Community</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leave a review form -->
+    <section style="padding: 70px 0; background: #0a0a0a;">
+        <div class="container">
+            <h2 class="heading-font fade-in" style="font-size: 3rem; text-align: center;">Share Your Experience</h2>
+            <p class="fade-in" style="text-align: center; max-width: 600px; margin: 0 auto 30px; color: #ccc;">Your feedback helps us improve and grow. We value every opinion and strive to provide the best service possible.</p>
+            <div class="review-form fade-in">
+                <div class="form-group">
+                    <input type="text" placeholder="Your full name">
+                </div>
+                <div class="form-group">
+                    <select>
+                        <option>Select service / product</option>
+                        <option>MZR Life Essentials</option>
+                        <option>MZR Tech</option>
+                        <option>Rehman Online Quran Academy</option>
+                        <option>Zedemy</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <div style="color: white; margin-bottom: 10px;">Your rating:</div>
+                    <div class="star-rating-select">
+                        <i class="fa-regular fa-star" data-star="1"></i>
+                        <i class="fa-regular fa-star" data-star="2"></i>
+                        <i class="fa-regular fa-star" data-star="3"></i>
+                        <i class="fa-regular fa-star" data-star="4"></i>
+                        <i class="fa-regular fa-star" data-star="5"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea rows="4" placeholder="Write your review..."></textarea>
+                </div>
+                <button class="btn-gold">Submit Review</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-final">
+        <div class="container">
+            <h2 class="fade-in" style="font-size: 3.2rem; color: #fff; text-shadow: 0 0 15px #D4AF37;">Ready to Experience Excellence?</h2>
+            <p class="fade-in" style="font-size: 1.5rem; color: #e0cba0; margin: 20px 0;">Join hundreds of satisfied clients across our branches.</p>
+            <p class="fade-in" style="font-size: 2rem;"><i class="fas fa-phone-alt gold-text"></i> +923249375759</p>
+            <p class="fade-in" style="font-size: 2rem; margin-bottom: 30px;"><i class="fas fa-envelope gold-text"></i> mzrhuboffical@gmail.com</p>
+            <a href="#" class="btn-gold fade-in" style="display: inline-block; width: auto; padding: 18px 60px;">Contact MZR HUB</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 MZR HUB – parent company. All rights reserved. · reviews & trust</p>
+        <p style="margin-top: 8px; color: #3a3a3a;">✦  authentic · professional · reliable  ✦</p>
+    </footer>
+
+    <!-- scroll observer + mini star rating + counter animation -->
+    <script>
+        (function() {
+            // fade observer
+            const faders = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.2, rootMargin: '0px 0px -40px 0px' });
+            faders.forEach(f => observer.observe(f));
+
+            // simple star rating selector (ui only)
+            const stars = document.querySelectorAll('.star-rating-select i');
+            stars.forEach(star => {
+                star.addEventListener('click', function() {
+                    let rating = this.getAttribute('data-star');
+                    stars.forEach(s => {
+                        s.classList.remove('fa-solid', 'active');
+                        s.classList.add('fa-regular');
+                    });
+                    for (let i = 0; i < rating; i++) {
+                        stars[i].classList.remove('fa-regular');
+                        stars[i].classList.add('fa-solid', 'active');
+                    }
+                });
+            });
+
+            // quick counter animation for stats (simple)
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const counterObserver = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = el.getAttribute('data-target');
+                        if (!target) return;
+                        let current = 0;
+                        const increment = target > 100 ? 11 : 1;
+                        const timer = setInterval(() => {
+                            if (current >= target) {
+                                el.innerText = target + (el.innerText.includes('%') ? '%' : target == 4 ? '' : '+');
+                                clearInterval(timer);
+                            } else {
+                                current += increment;
+                                el.innerText = current + (el.innerText.includes('%') ? '%' : '');
+                            }
+                        }, 30);
+                        obs.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.5 });
+            statNumbers.forEach(n => counterObserver.observe(n));
+        })();
+    </script>
+    <!-- tiny fix for stat symbols -->
+    <style>
+        .stat-number[data-target="100"]::after, .stat-number[data-target="500"]::after { content: '+'; }
+        .stat-number[data-target="95"]::after { content: '%'; }
+        .stat-number[data-target="4"]::after { content: ''; }
+    </style>
+</body>
+</html>
