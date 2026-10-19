@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Tuition (Online & Physical) - MZR HUB</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .btn-gradient {
+            background: linear-gradient(135deg, #2563eb 0%, #f97316 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-gradient:hover {
+            opacity: 0.95;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -5px rgba(249, 115, 22, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 min-h-screen flex flex-col justify-between font-sans">
+
+    <!-- Main Container -->
+    <div class="max-w-md mx-auto px-4 py-10 w-full flex-grow flex flex-col items-center">
+        
+        <!-- Back to Hub Link -->
+        <div class="w-full mb-6">
+            <a href="index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-orange-500 transition-colors">
+                <i class="fa-solid fa-arrow-left"></i> Back to MZR HUB
+            </a>
+        </div>
+
+        <!-- Logo / Image Section -->
+        <div class="mb-4 relative">
+            <div class="w-28 h-28 rounded-full p-1 bg-gradient-to-tr from-blue-600 to-orange-500 shadow-lg flex items-center justify-center">
+                <img src="tuition-logo.png" alt="Home Tuition Logo" class="w-full h-full object-cover rounded-full bg-white" onerror="this.src='https://via.placeholder.com/150?text=Home+Tuition'">
+            </div>
+        </div>
+
+        <!-- Title & Subtitle -->
+        <h1 class="text-2xl font-black tracking-wide text-blue-900 uppercase mb-1 text-center">Home Tuition</h1>
+        <p class="text-orange-600 font-medium text-sm mb-4 text-center">Online & Physical Expert Tutoring Services</p>
+
+        <!-- Description Box -->
+        <div class="bg-blue-50/50 border border-blue-100 rounded-xl p-4 w-full mb-6 text-center shadow-sm">
+            <p class="text-gray-600 text-sm leading-relaxed">
+                Fill out the quick form below to request a tutor for school grades (KG to 12), all or specific subjects, including Islamic studies and Quran recitation.
+            </p>
+        </div>
+
+        <!-- Tuition Request Form -->
+        <form id="tuitionForm" onsubmit="submitToWhatsApp(event)" class="w-full space-y-4">
+            
+            <!-- Full Name -->
+            <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-blue-900 mb-1">Your Name</label>
+                <input type="text" id="fullName" required placeholder="Enter student or parent name" class="w-full p-3 rounded-xl border-2 border-blue-200 focus:border-blue-600 focus:outline-none text-sm bg-gray-50">
+            </div>
+
+            <!-- Mode: Online or Physical -->
+            <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-blue-900 mb-1">Tuition Mode</label>
+                <select id="tuitionMode" required class="w-full p-3 rounded-xl border-2 border-blue-200 focus:border-blue-600 focus:outline-none text-sm bg-gray-50">
+                    <option value="" disabled selected>Select Mode</option>
+                    <option value="Physical (At Home)">Physical (At Home)</option>
+                    <option value="Online">Online</option>
+                </select>
+            </div>
+
+            <!-- Grade Selection (KG to 12) -->
+            <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-blue-900 mb-1">Select Grade</label>
+                <select id="studentGrade" required class="w-full p-3 rounded-xl border-2 border-blue-200 focus:border-blue-600 focus:outline-none text-sm bg-gray-50">
+                    <option value="" disabled selected>Select Grade (KG to 12)</option>
+                    <option value="KG / Prep">KG / Prep</option>
+                    <option value="Grade 1">Grade 1</option>
+                    <option value="Grade 2">Grade 2</option>
+                    <option value="Grade 3">Grade 3</option>
+                    <option value="Grade 4">Grade 4</option>
+                    <option value="Grade 5">Grade 5</option>
+                    <option value="Grade 6">Grade 6</option>
+                    <option value="Grade 7">Grade 7</option>
+                    <option value="Grade 8">Grade 8</option>
+                    <option value="Grade 9 (Matric)">Grade 9 (Matric)</option>
+                    <option value="Grade 10 (Matric)">Grade 10 (Matric)</option>
+                    <option value="Grade 11 (Inter/1st Year)">Grade 11 (Inter / 1st Year)</option>
+                    <option value="Grade 12 (Inter/2nd Year)">Grade 12 (Inter / 2nd Year)</option>
+                </select>
+            </div>
+
+            <!-- Subject Type: All or Specific -->
+            <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-blue-900 mb-1">Subject Preference</label>
+                <select id="subjectType" required onchange="toggleSubjectInput()" class="w-full p-3 rounded-xl border-2 border-blue-200 focus:border-blue-600 focus:outline-none text-sm bg-gray-50">
+                    <option value="" disabled selected>Select Option</option>
+                    <option value="All Subjects">All Subjects</option>
+                    <option value="Specific Subjects">Specific Subjects</option>
+                    <option value="Islamic Subjects / Quran Recitation">Islamic Subjects / Quran Recitation</option>
+                </select>
+            </div>
+
+            <!-- Specific Subjects Detail (Hidden by default unless Specific is chosen) -->
+            <div id="specificSubjectsDiv" class="hidden">
+                <label class="block text-xs font-bold uppercase tracking-wider text-blue-900 mb-1">Specify Subjects</label>
+                <input type="text" id="specificSubjects" placeholder="e.g. Mathematics, Physics, Quran" class="w-full p-3 rounded-xl border-2 border-blue-200 focus:border-blue-600 focus:outline-none text-sm bg-gray-50">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="w-full py-4 px-6 rounded-xl btn-gradient text-white font-bold flex items-center justify-center gap-3 shadow-md mt-6">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                <span>Request Tutor via WhatsApp</span>
+            </button>
+        </form>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full text-center py-4 border-t border-gray-100 text-xs text-gray-500">
+        &copy; 2026 MZR HUB. All Rights Reserved.
+    </footer>
+
+    <!-- JavaScript Handler for Form Submission -->
+    <script>
+        function toggleSubjectInput() {
+            const subjectType = document.getElementById('subjectType').value;
+            const specificDiv = document.getElementById('specificSubjectsDiv');
+            if (subjectType === 'Specific Subjects') {
+                specificDiv.classList.remove('hidden');
+                document.getElementById('specificSubjects').setAttribute('required', 'true');
+            } else {
+                specificDiv.classList.add('hidden');
+                document.getElementById('specificSubjects').removeAttribute('required');
+            }
+        }
+
+        function submitToWhatsApp(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('fullName').value;
+            const mode = document.getElementById('tuitionMode').value;
+            const grade = document.getElementById('studentGrade').value;
+            const subjectType = document.getElementById('subjectType').value;
+            const specific = document.getElementById('specificSubjects').value;
+
+            let subjectDetails = subjectType;
+            if (subjectType === 'Specific Subjects' && specific) {
+                subjectDetails = `Specific Subjects: ${specific}`;
+            }
+
+            const phone = "923249375759";
+            const message = `Hello MZR HUB, I would like to request a tutor:%0A%0A*Name:* ${name}%0A*Mode:* ${mode}%0A*Grade:* ${grade}%0A*Subjects:* ${subjectDetails}`;
+            
+            window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MZR HUB - Ecosystem of Projects & Services</title>
+    <!-- Tailwind CSS CDN for rapid, modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .btn-gradient {
+            background: linear-gradient(135deg, #2563eb 0%, #f97316 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-gradient:hover {
+            opacity: 0.95;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -5px rgba(249, 115, 22, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 min-h-screen flex flex-col justify-between font-sans">
+
+    <!-- Main Container -->
+    <div class="max-w-md mx-auto px-4 py-10 w-full flex-grow flex flex-col items-center">
+        
+        <!-- Logo Section -->
+        <div class="mb-4 relative">
+            <div class="w-28 h-28 rounded-full p-1 bg-gradient-to-tr from-blue-600 to-orange-500 shadow-lg flex items-center justify-center">
+                <!-- Replace 'logo.png' with your actual image file name -->
+                <img src="hub.jpeg" alt="MZR HUB Logo" class="w-full h-full object-cover rounded-full bg-white" onerror="this.src='https://via.placeholder.com/150?text=MZR+HUB'">
+            </div>
+        </div>
+
+        <!-- Brand Title & Welcome Message -->
+        <h1 class="text-2xl font-black tracking-wider text-blue-900 uppercase mb-2">MZR HUB</h1>
+        <p class="text-center text-gray-600 text-sm mb-8 px-4 leading-relaxed">
+            Welcome! Explore our digital ecosystem, educational institutes, training programs, and professional services below.
+        </p>
+
+        <!-- Links Tree Container -->
+        <div class="w-full space-y-4 flex flex-col">
+            
+            <!-- Link 1: MZR Khan -->
+            <a href="mzrkhan.html" target="_blank" class="flex items-center justify-between p-4 rounded-xl border-2 border-blue-600 text-blue-900 font-semibold hover:bg-blue-50 transition-all shadow-sm group">
+                <span class="flex items-center gap-3">
+                    <i class="fa-solid fa-user-tie text-orange-500 text-lg"></i>
+                    <span>MZR Khan</span>
+                </span>
+                <i class="fa-solid fa-arrow-right text-gray-400 group-hover:text-blue-600 transition-colors"></i>
+            </a>
+
+            <!-- Link 2: SkillsNow Institute -->
+            <a href="skillsnow.html" target="_blank" class="flex items-center justify-between p-4 rounded-xl border-2 border-blue-600 text-blue-900 font-semibold hover:bg-blue-50 transition-all shadow-sm group">
+                <span class="flex items-center gap-3">
+                    <i class="fa-solid fa-laptop-code text-orange-500 text-lg"></i>
+                    <span>SkillsNow Institute</span>
+                </span>
+                <i class="fa-solid fa-arrow-right text-gray-400 group-hover:text-blue-600 transition-colors"></i>
+            </a>
+
+            <!-- Link 3: Zedemy -->
+            <a href="zedemy.html" target="_blank" class="flex items-center justify-between p-4 rounded-xl border-2 border-blue-600 text-blue-900 font-semibold hover:bg-blue-50 transition-all shadow-sm group">
+                <span class="flex items-center gap-3">
+                    <i class="fa-solid fa-graduation-cap text-orange-500 text-lg"></i>
+                    <span>Zedemy</span>
+                </span>
+                <i class="fa-solid fa-arrow-right text-gray-400 group-hover:text-blue-600 transition-colors"></i>
+            </a>
+
+            <!-- Link 5: Home Tuition -->
+            <a href="hometuition.html" target="_blank" class="flex items-center justify-between p-4 rounded-xl border-2 border-blue-600 text-blue-900 font-semibold hover:bg-blue-50 transition-all shadow-sm group">
+                <span class="flex items-center gap-3">
+                    <i class="fa-solid fa-chalkboard-user text-orange-500 text-lg"></i>
+                    <span>Home Tuition (Online & Physical)</span>
+                </span>
+                <i class="fa-solid fa-arrow-right text-gray-400 group-hover:text-blue-600 transition-colors"></i>
+            </a>
+
+            <!-- Link 6: RILS Academy -->
+            <a href="rilsacademy.html" target="_blank" class="flex items-center justify-between p-4 rounded-xl border-2 border-blue-600 text-blue-900 font-semibold hover:bg-blue-50 transition-all shadow-sm group">
+                <span class="flex items-center gap-3">
+                    <i class="fa-solid fa-book-open text-orange-500 text-lg"></i>
+                    <span>RILS Academy</span>
+                </span>
+                <i class="fa-solid fa-arrow-right text-gray-400 group-hover:text-blue-600 transition-colors"></i>
+            </a>
+
+        </div>
+
+        <!-- WhatsApp Quick Action Button -->
+        <div class="w-full mt-8">
+            <a href="https://wa.me/923249375759?text=Hello%20MZR%20HUB,%20I%20visited%20via%20your%20business%20card%20scan!" target="_blank" class="w-full py-4 px-6 rounded-xl btn-gradient text-white font-bold flex items-center justify-center gap-3 shadow-md">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                <span>Connect on WhatsApp</span>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full text-center py-4 border-t border-gray-100 text-xs text-gray-500">
+        &copy; 2026 MZR HUB. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
